@@ -130,6 +130,16 @@ mkproject() {
                 mkdir -p ${PROJECT_GID}
                 chown root:${GID} ${PROJECT_GID}
                 chmod 2770 ${PROJECT_GID}
+
+                # Clone GitHub repository with user context
+                sudo -u $USERNAME git clone https://github.com/target-org/template-repo.git ${PROJECT_USER}/template
+                if [ $? -eq 0 ]; then
+                    echo "INFO::${FUNCNAME} ${GROUP} ${USERNAME}: Cloned template repo"
+                else
+                    echo "ERROR::${FUNCNAME} ${GROUP} ${USERNAME}: Failed to clone repository" 
+                    return 1
+                fi
+                
                 ln -sfT "/project/$GID" ${PROJECT_GROUP}
                 restorecon -F -R ${PROJECT_GID} ${PROJECT_GROUP}
                 echo "INFO::${FUNCNAME} ${GROUP}: created ${PROJECT_GID}"
