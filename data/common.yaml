@@ -306,4 +306,4 @@ profile::gpu::install::passthrough::packages:
   - nvidia-driver-cuda
 
 profile::project_repos:
-  default_repo: "https://github.com/org/default-project.git"
+  default_repo: "https://github.com/jiuntian/pytorch-mnist-example.git"
