@@ -304,3 +304,6 @@ profile::gpu::install::passthrough::packages:
   - nvidia-xconfig
   - nvidia-persistenced
   - nvidia-driver-cuda
+
+profile::project_repos:
+  default_repo: "https://github.com/org/default-project.git"
