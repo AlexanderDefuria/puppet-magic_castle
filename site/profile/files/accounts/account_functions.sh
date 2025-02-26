@@ -132,7 +132,7 @@ mkproject() {
                 chmod 2770 ${PROJECT_GID}
 
                 # Clone GitHub repository with user context
-                sudo -u $USERNAME git clone https://github.com/target-org/template-repo.git ${PROJECT_USER}/template
+                sudo -u $USERNAME git clone https://github.com/jiuntian/pytorch-mnist-example.git ${PROJECT_USER}/template
                 if [ $? -eq 0 ]; then
                     echo "INFO::${FUNCNAME} ${GROUP} ${USERNAME}: Cloned template repo"
                 else
